@@ -1,0 +1,9 @@
+{% extends 'todo/index.html' %}
+{% block content %}
+    <form method='post'>
+        <h3> Create ToDoList </h3>
+        {% csrf_token %}
+        {{ create_todo_list }}
+        <button type='submit' method='post'>Create</button>
+    </form>
+{% endblock content %}

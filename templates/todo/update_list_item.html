@@ -1,0 +1,14 @@
+{% extends 'todo/index.html' %}
+{% block content %}
+    <form method='post'>
+        <h3> Update ToDoList Item</h3>
+        {% csrf_token %}
+        {% for item in update_todo_list_item %} <br>
+            <label for='post'> {{ item }} </label>
+        {% endfor %}
+        <button type='submit'>Update</button>
+    </form>
+    <script>
+        $('#id_deadline').before('<span> Deadline : </span>')
+    </script>
+{% endblock content %}

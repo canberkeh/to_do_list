@@ -1,0 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import 'base.css';
+
+.register-page {
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.register-form .helptext, .register-form li {
+    font-size: 10px;
+}

@@ -1,0 +1,18 @@
+<head>
+    {% load static %}
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <link rel='stylesheet' href='{% static  'css/login.css' %}'>
+    <title>Login</title>
+</head>
+<div class='login-page'>
+    <div class='form'>
+        <form class='login-form' method='post'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button>Login</button>
+            {% block content %}
+                <p class='message'>Not registered? <a href='/todo/register'>Create an account</a></p>
+            {% endblock %}
+        </form>
+    </div>
+</div>

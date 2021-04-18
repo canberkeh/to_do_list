@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+@import 'base.css';
+
+.login-info {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 80% !important;
+    margin: 30px auto 100px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 25px;
+}
+
+.todolist {
+    z-index: 1;
+    max-width: 80%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.todolist .container {
+    position: relative;
+    background: #FFFFFF;
+    padding: 25px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 25px;
+    min-height: 250px;
+    margin-top: -50px !important;
+}
+
+.todolist .container .section {
+    text-align: left;
+}
+
+.todolist .container .item-table {
+    margin-bottom: 20px;
+}
+
+.todolist .container .item-table th {
+    text-align: center;
+}
+
+.todolist .container .item-table td {
+    text-align: center;
+}
+
+.todolist .container .button, .login-info .button {
+    width: 165px;
+    height: 40px;
+    background: #4CAF50;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    line-height: 25px;
+}
+
+#statusFilter {
+    width: 155px;
+    display: relative;
+    margin-bottom: 10px;
+    float: right;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#myInput {
+    border-radius: 10px;
+    width: 150px;
+}
+
+#createButton {
+    float: right;
+    margin-right: 10px;
+}
+
+button {
+    background: #4CAF50;
+    border-radius: 5px;
+    color: white !important;
+    border: thick;
+}
