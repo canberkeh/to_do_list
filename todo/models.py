@@ -3,7 +3,6 @@ from django.db import models
 from datetime import datetime
 from django.db.models.deletion import CASCADE
 
-date = datetime.strptime('2018-11-10 10:55:31', '%Y-%m-%d %H:%M:%S')
 class ToDoList(models.Model):
     user = models.ForeignKey(User, on_delete=CASCADE)
     name = models.CharField(max_length=32)

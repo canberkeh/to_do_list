@@ -3,7 +3,7 @@ from todo.models import ToDoListItem
 from django.utils import timezone
 
 
-class Command(BaseCommand):
+class Command(BaseCommand): 
     """This command triggers exchane update process"""
 
     def handle(self, *args, **options):
