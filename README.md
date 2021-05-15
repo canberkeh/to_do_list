@@ -22,3 +22,8 @@ Now you can use django-admin with this url: <code> 0.0.0.0:8000/admin </code>
 
 To check expired items, run this command: 
 <code> docker exec -it [CONTAINER_ID] python manage.py check_expired_items </code>
+
+# DEMO on heroku ---> https://todo-app-case-study.herokuapp.com/
+
+![sss](https://user-images.githubusercontent.com/73230039/118378249-22213900-b5db-11eb-90ab-2fe0d882929c.jpg)
+
