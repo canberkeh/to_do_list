@@ -1,52 +1,32 @@
-<!DOCTYPE html>
-<html lang='en'>
-
-<head>
-    <meta charset='UTF-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Todo List Item</title>
-    {% load static %}
-    <link rel='stylesheet' href='{% static  ' css/details.css' %}'>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
-</head>
-
-<body>
-    <div class='main'>
-        {% block content %}
-        <table class='item-table col-md-12' id='myTable'>
-            <thead>
-                <tr>
-                    <th><a style="cursor: pointer">Name</a>
-                    </th>
-                    <th><a style="cursor: pointer"><u>Created Date</u></th>
-                    </a>
-                    <th><a style="cursor: pointer"><u>Deadline</u></th>
-                    </a>
-                    <th><a style="cursor: pointer"><u>Status</u></th>
-                    </a>
-                    <th><a style="cursor: pointer"><u>Description</u></th>
-                    </a>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>{{ todo_list_item.name }}</td>
-                    <td>{{ todo_list_item.create_date | date:'d M Y' }}</td>
-                    <td>{{ todo_list_item.deadline |date:'d M Y' }}</td>
-                    <td>{{ todo_list_item.status }}</td>
-                    </td>
-                </tr><br>
-                <tr>
-                    <td>{{ todo_list_item.description }}</td>
-                </tr>
-            </tbody>
-        </table>
-        <a id='button' class='button' href='/'>Home</a>
-        {% endblock content %}
-    </div>
-</body>
-
-</html>
+{% extends 'todo/index.html' %}
+{% block content %}
+<table class='item-table col-md-12' id='myTable'>
+    <thead>
+        <tr>
+            <th><a style="cursor: pointer">Name</a>
+            </th>
+            <th><a style="cursor: pointer"><u>Created Date</u></th>
+            </a>
+            <th><a style="cursor: pointer"><u>Deadline</u></th>
+            </a>
+            <th><a style="cursor: pointer"><u>Status</u></th>
+            </a>
+            <th><a style="cursor: pointer"><u>Description</u></th>
+            </a>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ todo_list_item.name }}</td>
+            <td>{{ todo_list_item.create_date | date:'d M Y' }}</td>
+            <td>{{ todo_list_item.deadline |date:'d M Y' }}</td>
+            <td>{{ todo_list_item.status }}</td>
+            </td>
+        </tr><br>
+        <tr>
+            <td>{{ todo_list_item.description }}</td>
+        </tr>
+    </tbody>
+</table>
+<a id='button' class='button' href='/'>Home</a>
+{% endblock content %}
