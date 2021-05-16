@@ -17,24 +17,22 @@
         </tr>
         </thead>
         <tbody>
-            {% for item in todo_list_item %}
             <tr>
-            <td>{{ item.name }}</td>
-            <td>{{ item.create_date | date:'d M Y' }}</td>
-            <td>{{ item.deadline |date:'d M Y' }}</td>
-            <td>{{ item.status }}</td>
+            <td>{{ todo_list_item.name }}</td>
+            <td>{{ todo_list_item.create_date | date:'d M Y' }}</td>
+            <td>{{ todo_list_item.deadline |date:'d M Y' }}</td>
+            <td>{{ todo_list_item.status }}</td>
             <td><a href='{% url 'update_todo_list_item' item.id %}'>Update</a> <br>
                 <a href='{% url 'delete_todo_list_item' item.id %}'>Delete</a><br>
                 <a href='{% url 'mark_todo_list_item' item.id %}'>
-                    {% if item.status == 'COMPLETED' %}
+                    {% if todo_list_item.status == 'COMPLETED' %}
                         Mark as Uncompleted
-                    {% elif item.status == 'UNCOMPLETED' %}
+                    {% elif todo_list_item.status == 'UNCOMPLETED' %}
                         Mark as Completed
                     {% endif %}
                 </a><br>
-                <td>{{ item.description }}</td>
+                <td>{{ todo_list_item.description }}</td>
             </td>
-        {% endfor %}
         </tr>
         </tbody>
     </table>
