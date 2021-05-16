@@ -113,7 +113,7 @@ def mark_todo_list_item(request, id):
     item.save()
     return redirect('todo_list_items', item.todolist.id)
 
-
+    
 def detail(request, id):
-    detail = ToDoListItem.objects.get(id=id)
-    return render(request, 'todo/detail', {'detail': detail})
+    todo_list_item = ToDoListItem.objects.get(id=id)
+    return render(request, 'todo/detail.html', {'todo_list_item': todo_list_item})

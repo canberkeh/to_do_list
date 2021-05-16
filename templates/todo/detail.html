@@ -1,4 +1,41 @@
 {% extends 'todo/index.html' %}
 {% block content %}
-
+<div class='container col-md-12'>
+    <table class='item-table col-md-12' id='myTable'>
+        <thead>
+        <tr>
+            <th><a style="cursor: pointer">Name</a>
+            </th>
+            <th><a style="cursor: pointer"><u>Created Date</u></th>
+            </a>
+            <th><a style="cursor: pointer"><u>Deadline</u></th>
+            </a>
+            <th><a style="cursor: pointer"><u>Status</u></th>
+            </a>
+            <th><a style="cursor: pointer"><u>Description</u></th>
+            </a>
+        </tr>
+        </thead>
+        <tbody>
+            {% for item in todo_list_item %}
+            <tr>
+            <td>{{ item.name }}</td>
+            <td>{{ item.create_date | date:'d M Y' }}</td>
+            <td>{{ item.deadline |date:'d M Y' }}</td>
+            <td>{{ item.status }}</td>
+            <td><a href='{% url 'update_todo_list_item' item.id %}'>Update</a> <br>
+                <a href='{% url 'delete_todo_list_item' item.id %}'>Delete</a><br>
+                <a href='{% url 'mark_todo_list_item' item.id %}'>
+                    {% if item.status == 'COMPLETED' %}
+                        Mark as Uncompleted
+                    {% elif item.status == 'UNCOMPLETED' %}
+                        Mark as Completed
+                    {% endif %}
+                </a><br>
+                <td>{{ item.description }}</td>
+            </td>
+        {% endfor %}
+        </tr>
+        </tbody>
+    </table>
 {% endblock content %}
