@@ -7,7 +7,6 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Todo List Item</title>
     {% load static %}
-    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
     <link rel='stylesheet' href='{% static  ' css/details.css' %}'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
@@ -43,13 +42,13 @@
                         <td>{{ todo_list_item.deadline |date:'d M Y' }}</td>
                         <td>{{ todo_list_item.status }}</td>
                         </td>
-                    </tr>
+                    </tr><br>
                     <tr>
                         <td>{{ todo_list_item.description }}</td>
                     </tr>
                 </tbody>
             </table>
-            <a id='createButton' class='button' href='/'>Home</a>
+            <a id='button' class='button' href='/'>Home</a>
             {% endblock content %}
         </div>
     </div>
