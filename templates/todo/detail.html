@@ -1,31 +1,57 @@
-{% extends 'todo/index.html' %}
-{% block content %}
-<div class='container col-md-12'>
-    <table class='item-table col-md-12' id='myTable'>
-        <thead>
-            <tr>
-                <th><a style="cursor: pointer">Name</a>
-                </th>
-                <th><a style="cursor: pointer"><u>Created Date</u></th>
-                </a>
-                <th><a style="cursor: pointer"><u>Deadline</u></th>
-                </a>
-                <th><a style="cursor: pointer"><u>Status</u></th>
-                </a>
-                <th><a style="cursor: pointer"><u>Description</u></th>
-                </a>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ todo_list_item.name }}</td>
-                <td>{{ todo_list_item.create_date | date:'d M Y' }}</td>
-                <td>{{ todo_list_item.deadline |date:'d M Y' }}</td>
-                <td>{{ todo_list_item.status }}</td>
-                <td>{{ todo_list_item.description }}</td>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-    {% endblock content %}
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Todo List</title>
+    {% load static %}
+    <script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+    <link rel='stylesheet' href='{% static  ' css/index.css' %}'>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js'></script>
+</head>
+
+<body>
+    <div class='home-page'>
+        <div class='login-info'>
+            <h3> Your List Item </h3>
+        </div>
+        <div class='todolist'>
+            {% block content %}
+            <div class='container col-md-12'>
+                <table class='item-table col-md-12' id='myTable'>
+                    <thead>
+                        <tr>
+                            <th><a style="cursor: pointer">Name</a>
+                            </th>
+                            <th><a style="cursor: pointer"><u>Created Date</u></th>
+                            </a>
+                            <th><a style="cursor: pointer"><u>Deadline</u></th>
+                            </a>
+                            <th><a style="cursor: pointer"><u>Status</u></th>
+                            </a>
+                            <th><a style="cursor: pointer"><u>Description</u></th>
+                            </a>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ todo_list_item.name }}</td>
+                            <td>{{ todo_list_item.create_date | date:'d M Y' }}</td>
+                            <td>{{ todo_list_item.deadline |date:'d M Y' }}</td>
+                            <td>{{ todo_list_item.status }}</td>
+                            <td>{{ todo_list_item.description }}</td>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {% endblock content %}
+        </div>
+    </div>
+</body>
+
+</html>
