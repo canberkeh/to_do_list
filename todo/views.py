@@ -112,3 +112,8 @@ def mark_todo_list_item(request, id):
         item.status = ToDoListItem.ToDoListItemStatus.UNCOMPLETED
     item.save()
     return redirect('todo_list_items', item.todolist.id)
+
+
+def detail(request, id):
+    detail = ToDoListItem.objects.get(id=id)
+    return render(request, 'todo/detail', {'detail': detail})

@@ -66,6 +66,7 @@
                         Mark as Completed
                     {% endif %}
                 </a>
+                <a href='{% url 'detail' item.id %}'>detail</a>
             </td>
         {% endfor %}
         </tr>
