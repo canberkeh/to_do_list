@@ -1,6 +1,5 @@
 from enum import Enum
 
-
 class ToDoListItemStatus(Enum):
     UNCOMPLETED = 'UNCOMPLETED'
     COMPLETED = 'COMPLETED'
